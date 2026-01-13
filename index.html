@@ -5,14 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AxolotlBR</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root{
   --bg:#0e0b14;
-  --bg2:#15101f;
-  --card:#1c1630;
+  --bg2:#161124;
+  --card:#1e1933;
   --roxo:#7a3cff;
+  --roxo-soft:rgba(122,60,255,.15);
   --txt:#e6e3f0;
   --muted:rgba(230,227,240,.65);
 }
@@ -26,22 +27,21 @@ body{
   line-height:1.65;
 }
 
-
 header{
-  padding:100px 20px 70px;
+  padding:110px 20px 80px;
   max-width:1200px;
   margin:auto;
 }
 
 header h1{
-  font-size:3rem;
+  font-size:3.2rem;
   font-weight:800;
   color:var(--roxo);
 }
 
 header p{
   margin-top:18px;
-  max-width:720px;
+  max-width:750px;
   color:var(--muted);
 }
 
@@ -53,17 +53,16 @@ header p{
 }
 
 .section h2{
-  font-size:2.1rem;
+  font-size:2.2rem;
   font-weight:700;
-  margin-bottom:25px;
+  margin-bottom:30px;
 }
 
 .section p{
   max-width:900px;
-  margin-bottom:20px;
+  margin-bottom:22px;
   color:var(--muted);
 }
-
 
 .grid{
   display:grid;
@@ -71,16 +70,17 @@ header p{
   gap:28px;
 }
 
+
 .card{
   background:var(--card);
   border:1px solid rgba(122,60,255,.25);
-  border-radius:14px;
-  padding:26px;
+  border-radius:16px;
+  padding:28px;
 }
 
 .card h3{
-  font-size:1.25rem;
-  margin-bottom:10px;
+  font-size:1.35rem;
+  margin-bottom:12px;
 }
 
 .card p{
@@ -88,36 +88,38 @@ header p{
 }
 
 
-.roadmap{
-  display:flex;
-  flex-direction:column;
-  gap:30px;
+.tag{
+  display:inline-block;
+  margin-top:14px;
+  padding:6px 14px;
+  font-size:.75rem;
+  border-radius:50px;
+  background:var(--roxo-soft);
+  color:var(--roxo);
 }
 
-.phase{
-  background:var(--card);
-  border-left:4px solid var(--roxo);
-  padding:25px;
-  border-radius:10px;
+.list li{
+  margin-bottom:12px;
+  color:var(--muted);
 }
 
-.phase span{
+.timeline{
+  border-left:2px solid var(--roxo);
+  padding-left:25px;
+}
+
+.timeline-item{
+  margin-bottom:35px;
+}
+
+.timeline-item span{
   font-size:.8rem;
   color:rgba(255,255,255,.5);
 }
 
-.phase h3{
-  margin:10px 0;
-  font-size:1.3rem;
-}
-
-.phase ul{
-  margin-left:18px;
-}
-
-.phase li{
-  margin-bottom:8px;
-  color:var(--muted);
+.timeline-item h4{
+  margin:8px 0;
+  font-size:1.2rem;
 }
 
 footer{
@@ -136,94 +138,95 @@ footer{
 <header>
   <h1>AxolotlBR</h1>
   <p>
-    Plataforma em desenvolvimento voltada à integração de comunidades gamers,
-    projetos criativos e experiências interativas.
+    AxolotlBR é um projeto em desenvolvimento focado na criação de um ambiente
+    digital para comunidades gamers, criadores e projetos colaborativos.
   </p>
 </header>
 
 <section class="section">
-  <h2>Visão Geral</h2>
+  <h2>Visão do Projeto</h2>
   <p>
-    O AxolotlBR foi idealizado como um ambiente unificado, capaz de conectar
-    pessoas, conteúdos e sistemas em constante evolução.
-  </p>
-  <p>
-    O projeto segue uma abordagem incremental, priorizando estrutura sólida
-    antes da expansão completa de funcionalidades.
+    O objetivo do AxolotlBR é centralizar experiências interativas em um único espaço,
+    permitindo crescimento gradual, organização e integração entre diferentes áreas.
   </p>
 </section>
 
 <section class="section">
-  <h2>Componentes do Projeto</h2>
+  <h2>Destaques Atuais</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Base Estruturada</h3>
+      <p>Layout e seções principais organizadas para facilitar expansão.</p>
+      <span class="tag">ativo</span>
+    </div>
+    <div class="card">
+      <h3>Foco em Comunidade</h3>
+      <p>Planejamento de espaços colaborativos e eventos internos.</p>
+      <span class="tag">em andamento</span>
+    </div>
+    <div class="card">
+      <h3>Escalabilidade</h3>
+      <p>Projeto pensado para crescer sem precisar refazer tudo.</p>
+      <span class="tag">prioridade</span>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>O que estamos construindo</h2>
   <div class="grid">
     <div class="card">
       <h3>Comunidade</h3>
-      <p>Espaços de interação, eventos internos e grupos organizados.</p>
+      <p>Espaços organizados, eventos e integração com plataformas externas.</p>
     </div>
     <div class="card">
       <h3>Jogos & RPG</h3>
-      <p>Sistemas narrativos, campanhas e experiências autorais.</p>
+      <p>Sistemas próprios, campanhas e experiências narrativas.</p>
     </div>
     <div class="card">
-      <h3>Ferramentas Internas</h3>
-      <p>Recursos voltados à organização e suporte do ecossistema.</p>
+      <h3>Ferramentas</h3>
+      <p>Recursos internos para organização e suporte do projeto.</p>
     </div>
     <div class="card">
       <h3>Integrações</h3>
-      <p>Conexão com plataformas externas e serviços complementares.</p>
+      <p>Discord, GitHub, Roblox e outros serviços.</p>
     </div>
   </div>
 </section>
 
 <section class="section">
-  <h2>Roadmap Inicial</h2>
-
-  <div class="roadmap">
-
-    <div class="phase">
-      <span>Fase 1 • atual</span>
-      <h3>Estrutura & Planejamento</h3>
-      <ul>
-        <li>Definição de identidade do projeto</li>
-        <li>Estrutura base do site</li>
-        <li>Organização das áreas principais</li>
-      </ul>
-    </div>
-
-    <div class="phase">
-      <span>Fase 2</span>
-      <h3>Expansão de Conteúdo</h3>
-      <ul>
-        <li>Publicação gradual de seções</li>
-        <li>Documentação interna</li>
-        <li>Integração inicial com comunidade</li>
-      </ul>
-    </div>
-
-    <div class="phase">
-      <span>Fase 3</span>
-      <h3>Funcionalidades Ativas</h3>
-      <ul>
-        <li>Sistemas interativos</li>
-        <li>Automação de processos</li>
-        <li>Eventos e experiências ao vivo</li>
-      </ul>
-    </div>
-
-  </div>
+  <h2>Tecnologias & Base</h2>
+  <ul class="list">
+    <li>HTML5 e CSS3 para estrutura e layout</li>
+    <li>JavaScript para futuras interações</li>
+    <li>Versionamento via Git</li>
+    <li>Organização modular de conteúdo</li>
+  </ul>
 </section>
 
 <section class="section">
-  <h2>Status Atual</h2>
-  <p>
-    Esta versão representa um marco intermediário do projeto.
-    Ajustes visuais, conteúdos adicionais e novas integrações
-    serão incorporados conforme o avanço das fases.
-  </p>
+  <h2>Atualizações Recentes</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <span>build 0.8</span>
+      <h4>Expansão de conteúdo</h4>
+      <p>Novas seções adicionadas e ajustes de layout.</p>
+    </div>
+    <div class="timeline-item">
+      <span>build 0.75</span>
+      <h4>Organização estrutural</h4>
+      <p>Padronização visual e melhoria de legibilidade.</p>
+    </div>
+    <div class="timeline-item">
+      <span>build 0.7</span>
+      <h4>Base inicial</h4>
+      <p>Definição do conceito e identidade do projeto.</p>
+    </div>
+  </div>
 </section>
 
 <footer>
-  AxolotlBR • versão em desenvolvimento • build 0.75
+  AxolotlBR • projeto em desenvolvimento • build 0.8
 </footer>
 
 </body>
