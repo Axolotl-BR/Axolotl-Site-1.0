@@ -9,13 +9,13 @@
 
 <style>
 :root{
-  --bg:#0e0b14;
-  --bg2:#161124;
-  --card:#1f1936;
+  --bg:#0c0814;
+  --bg2:#151026;
+  --card:#1c1633;
   --roxo:#7a3cff;
-  --roxo2:#9a6bff;
-  --txt:#e6e3f0;
-  --muted:rgba(230,227,240,.65);
+  --roxo2:#b18cff;
+  --txt:#e8e6f3;
+  --muted:rgba(232,230,243,.65);
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
@@ -23,11 +23,12 @@
 body{
   font-family:Inter,sans-serif;
   background:
-    radial-gradient(circle at top, rgba(122,60,255,.08), transparent 40%),
+    radial-gradient(circle at top, rgba(122,60,255,.12), transparent 45%),
     linear-gradient(180deg,var(--bg),var(--bg2));
   color:var(--txt);
   line-height:1.65;
 }
+
 header{
   padding:120px 20px 90px;
   max-width:1200px;
@@ -35,7 +36,7 @@ header{
 }
 
 header h1{
-  font-size:3.3rem;
+  font-size:3.4rem;
   font-weight:800;
   background:linear-gradient(135deg,var(--roxo),var(--roxo2));
   -webkit-background-clip:text;
@@ -47,7 +48,6 @@ header p{
   max-width:760px;
   color:var(--muted);
 }
-
 .section{
   max-width:1200px;
   margin:110px auto;
@@ -55,7 +55,7 @@ header p{
 }
 
 .section h2{
-  font-size:2.3rem;
+  font-size:2.35rem;
   font-weight:700;
   margin-bottom:35px;
 }
@@ -69,36 +69,53 @@ header p{
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:30px;
+  gap:32px;
 }
 
 .card{
   background:
-    linear-gradient(180deg, rgba(255,255,255,.04), transparent),
+    linear-gradient(180deg, rgba(255,255,255,.05), transparent),
     var(--card);
-  border:1px solid rgba(122,60,255,.25);
-  border-radius:18px;
-  padding:30px;
-  transition:.35s ease;
+  border:1px solid rgba(122,60,255,.35);
+  border-radius:20px;
+  padding:32px;
   position:relative;
+  transition:.35s ease;
+  overflow:hidden;
+}
+
+
+.card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at top,var(--roxo),transparent 60%);
+  opacity:.15;
+  pointer-events:none;
 }
 
 .card::after{
   content:"";
   position:absolute;
   inset:0;
-  background:radial-gradient(circle at top,var(--roxo),transparent 60%);
-  opacity:.12;
-  pointer-events:none;
+  border-radius:20px;
+  border:1px solid transparent;
+  transition:.35s;
 }
 
 .card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 18px 40px rgba(122,60,255,.35);
+  transform:translateY(-10px) scale(1.01);
+  box-shadow:
+    0 25px 55px rgba(122,60,255,.45),
+    inset 0 0 25px rgba(122,60,255,.25);
+}
+
+.card:hover::after{
+  border-color:rgba(177,140,255,.6);
 }
 
 .card h3{
-  font-size:1.4rem;
+  font-size:1.45rem;
   margin-bottom:12px;
 }
 
@@ -108,62 +125,62 @@ header p{
 
 .tag{
   display:inline-block;
-  margin-top:16px;
-  padding:7px 16px;
+  margin-top:18px;
+  padding:7px 18px;
   font-size:.75rem;
   border-radius:50px;
-  background:rgba(122,60,255,.2);
-  color:#d6c8ff;
+  background:rgba(122,60,255,.25);
+  color:#e2d7ff;
 }
 
 .divider{
   height:1px;
   background:linear-gradient(90deg,transparent,var(--roxo),transparent);
-  margin:80px 0;
-  opacity:.5;
+  margin:90px 0;
+  opacity:.6;
 }
-
 
 .list li{
   margin-bottom:14px;
   color:var(--muted);
 }
 
-
 .timeline{
   border-left:2px solid rgba(122,60,255,.6);
-  padding-left:28px;
+  padding-left:32px;
 }
 
 .timeline-item{
-  margin-bottom:40px;
+  margin-bottom:45px;
   position:relative;
 }
 
 .timeline-item::before{
   content:"";
-  width:10px;
-  height:10px;
+  width:12px;
+  height:12px;
   background:var(--roxo);
   border-radius:50%;
   position:absolute;
-  left:-36px;
+  left:-39px;
   top:6px;
+  box-shadow:0 0 15px var(--roxo);
 }
 
 .timeline-item span{
   font-size:.8rem;
-  color:rgba(255,255,255,.5);
+  color:rgba(255,255,255,.55);
 }
 
 .timeline-item h4{
   margin:10px 0;
-  font-size:1.25rem;
+  font-size:1.3rem;
 }
 
+
 footer{
-  border-top:1px solid rgba(255,255,255,.1);
-  margin-top:140px;
+  border-top:1px solid rgba(255,255,255,.12);
+  margin-top:150px;
   padding:55px 20px;
   text-align:center;
   font-size:.85rem;
@@ -227,25 +244,25 @@ footer{
   <h2>Atualizações</h2>
   <div class="timeline">
     <div class="timeline-item">
+      <span>build 0.9</span>
+      <h4>Refino visual</h4>
+      <p>Adição de efeitos visuais e melhoria da interação.</p>
+    </div>
+    <div class="timeline-item">
       <span>build 0.85</span>
-      <h4>Refino visual e expansão</h4>
-      <p>Mais seções e melhoria da experiência.</p>
+      <h4>Expansão</h4>
+      <p>Novas seções e organização de conteúdo.</p>
     </div>
     <div class="timeline-item">
       <span>build 0.8</span>
       <h4>Base moderna</h4>
-      <p>Estrutura principal e organização.</p>
-    </div>
-    <div class="timeline-item">
-      <span>build 0.75</span>
-      <h4>Conceito inicial</h4>
-      <p>Definição da visão do projeto.</p>
+      <p>Estrutura principal definida.</p>
     </div>
   </div>
 </section>
 
 <footer>
-  AxolotlBR • projeto em desenvolvimento • build 0.85
+  AxolotlBR • projeto em desenvolvimento • build 0.9
 </footer>
 
 </body>
