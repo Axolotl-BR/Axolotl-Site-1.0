@@ -1,100 +1,89 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AxolotlBR</title>
-    <style>
-      
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <title>AxolotlBR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        body {
-            font-family: monospace;
-            background: #0a0a14;
-            color: #e0e0ff;
-            line-height: 1.6;
-            min-height: 100vh;
-            padding: 20px;
-        }
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #120822;
+      color: #eee;
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+    header {
+      padding: 20px;
+      background: #1a0b2e;
+    }
 
-        
-        .header {
-            padding: 20px 0;
-            border-bottom: 1px solid #2a2a4a;
-            margin-bottom: 40px;
-        }
+    nav a {
+      margin-right: 15px;
+      color: #ccc;
+      text-decoration: none;
+    }
 
-        .project-info {
-            margin-top: 10px;
-            font-size: 14px;
-            color: #8a8ac4;
-        }
+    section {
+      padding: 60px 20px;
+    }
 
-        .content-area {
-            background: rgba(20, 20, 40, 0.5);
-            border: 1px solid #2a2a4a;
-            border-radius: 8px;
-            padding: 30px;
-            margin-bottom: 30px;
-        }
+    h1, h2 {
+      color: #ff3e80;
+    }
 
-        .section-title {
-            color: #8a8ac4;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #2a2a4a;
-        }
+    .card {
+      background: #1e1033;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 8px;
+    }
 
-        .status-board {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin: 30px 0;
-        }
-
-        .status-item {
-            background: rgba(42, 42, 74, 0.3);
-            padding: 15px;
-            border-radius: 6px;
-            border-left: 3px solid #6a11cb;
-        }
-
-       
-        .dev-area {
-            background: rgba(30, 30, 50, 0.3);
-            border: 1px dashed #3a3a6a;
-            border-radius: 8px;
-            padding: 40px;
-            text-align: center;
-            margin: 40px 0;
-        }
-
-        .dev-notes {
-            font-size: 14px;
-            color: #6a6a9a;
-            margin-top: 20px;
-            font-style: italic;
-        }
-
-
-
-        .footer {
-            text-align: center;
-            padding: 20px;
-            margin-top: 50px;
-            color: #6a6a9a;
-            font-size: 12px;
-            border-top: 1px solid #2a2a4a;
-        }
-    </style>
+    footer {
+      padding: 30px;
+      text-align: center;
+      font-size: 14px;
+      opacity: 0.6;
+    }
+  </style>
 </head>
 <body>
+
+<header>
+  <nav>
+    <a href="#home">Início</a>
+    <a href="#about">Sobre</a>
+    <a href="#services">Projetos</a>
+  </nav>
+</header>
+
+<section id="home">
+  <h1>AxolotlBR</h1>
+  <p>Projeto experimental de comunidade e desenvolvimento.</p>
+  <!-- TODO: melhorar texto -->
+</section>
+
+<section id="about">
+  <h2>Sobre</h2>
+  <div class="card">
+    <p>
+      Comunidade focada em programação, bots e projetos digitais.
+      Ainda em desenvolvimento. 
+    </p>
+  </div>
+</section>
+
+<section id="services">
+  <h2>O que estamos fazendo</h2>
+  <div class="card">Bots para Discord</div>
+  <div class="card">Projetos educacionais</div>
+  <div class="card">Experimentos uebis hihi fabi my dad</div>
+</section>
+
+<footer>
+  AxolotlBR — projeto em construção 🧪
+</footer>
+
+</body>
+</html>
+
