@@ -5,17 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AxolotlBR</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --bg:#0c0814;
-  --bg2:#151026;
-  --card:#1c1633;
+  --bg:#0b0814;
+  --bg2:#120d23;
+  --card:#1b1633;
   --roxo:#7a3cff;
   --roxo2:#b18cff;
-  --txt:#e8e6f3;
-  --muted:rgba(232,230,243,.65);
+  --txt:#f0eef8;
+  --muted:rgba(240,238,248,.65);
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
@@ -23,53 +23,49 @@
 body{
   font-family:Inter,sans-serif;
   background:
-    radial-gradient(circle at top, rgba(122,60,255,.12), transparent 45%),
+    radial-gradient(circle at top, rgba(122,60,255,.15), transparent 45%),
     linear-gradient(180deg,var(--bg),var(--bg2));
   color:var(--txt);
-  line-height:1.65;
+  line-height:1.7;
 }
 
-header{
-  padding:120px 20px 90px;
-  max-width:1200px;
+.hero{
+  max-width:1300px;
   margin:auto;
+  padding:140px 24px 120px;
 }
 
-header h1{
-  font-size:3.4rem;
-  font-weight:800;
+.hero h1{
+  font-size:4rem;
+  font-weight:900;
   background:linear-gradient(135deg,var(--roxo),var(--roxo2));
   -webkit-background-clip:text;
   color:transparent;
 }
 
-header p{
-  margin-top:20px;
-  max-width:760px;
+.hero p{
+  margin-top:22px;
+  max-width:820px;
+  font-size:1.05rem;
   color:var(--muted);
 }
+
 .section{
-  max-width:1200px;
-  margin:110px auto;
-  padding:0 20px;
+  max-width:1300px;
+  margin:120px auto;
+  padding:0 24px;
 }
 
 .section h2{
-  font-size:2.35rem;
-  font-weight:700;
-  margin-bottom:35px;
-}
-
-.section p{
-  max-width:920px;
-  margin-bottom:24px;
-  color:var(--muted);
+  font-size:2.5rem;
+  font-weight:800;
+  margin-bottom:40px;
 }
 
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:32px;
+  gap:34px;
 }
 
 .card{
@@ -77,111 +73,114 @@ header p{
     linear-gradient(180deg, rgba(255,255,255,.05), transparent),
     var(--card);
   border:1px solid rgba(122,60,255,.35);
-  border-radius:20px;
-  padding:32px;
+  border-radius:22px;
+  padding:36px;
   position:relative;
-  transition:.35s ease;
+  transition:.4s ease;
   overflow:hidden;
 }
-
 
 .card::before{
   content:"";
   position:absolute;
   inset:0;
-  background:radial-gradient(circle at top,var(--roxo),transparent 60%);
-  opacity:.15;
+  background:radial-gradient(circle at top,var(--roxo),transparent 65%);
+  opacity:.18;
   pointer-events:none;
 }
 
-.card::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:20px;
-  border:1px solid transparent;
-  transition:.35s;
-}
-
 .card:hover{
-  transform:translateY(-10px) scale(1.01);
-  box-shadow:
-    0 25px 55px rgba(122,60,255,.45),
-    inset 0 0 25px rgba(122,60,255,.25);
-}
-
-.card:hover::after{
-  border-color:rgba(177,140,255,.6);
+  transform:translateY(-12px);
+  box-shadow:0 30px 65px rgba(122,60,255,.45);
 }
 
 .card h3{
-  font-size:1.45rem;
-  margin-bottom:12px;
+  font-size:1.5rem;
+  margin-bottom:14px;
 }
 
 .card p{
-  font-size:.96rem;
+  font-size:.97rem;
+  color:var(--muted);
 }
+
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:30px;
+}
+
+.stat{
+  text-align:center;
+  padding:35px;
+  border-radius:20px;
+  background:rgba(122,60,255,.12);
+  border:1px solid rgba(122,60,255,.35);
+}
+
+.stat h4{
+  font-size:2.6rem;
+  font-weight:900;
+  color:var(--roxo2);
+}
+
+.stat span{
+  display:block;
+  margin-top:8px;
+  font-size:.9rem;
+  color:var(--muted);
+}
+
 
 .tag{
   display:inline-block;
   margin-top:18px;
-  padding:7px 18px;
-  font-size:.75rem;
+  padding:8px 20px;
   border-radius:50px;
-  background:rgba(122,60,255,.25);
-  color:#e2d7ff;
+  font-size:.75rem;
+  background:rgba(122,60,255,.3);
+  color:#e9ddff;
 }
 
-.divider{
-  height:1px;
-  background:linear-gradient(90deg,transparent,var(--roxo),transparent);
-  margin:90px 0;
-  opacity:.6;
-}
-
-.list li{
-  margin-bottom:14px;
-  color:var(--muted);
-}
 
 .timeline{
-  border-left:2px solid rgba(122,60,255,.6);
-  padding-left:32px;
+  border-left:2px solid rgba(122,60,255,.7);
+  padding-left:36px;
 }
 
 .timeline-item{
-  margin-bottom:45px;
+  margin-bottom:50px;
   position:relative;
 }
 
 .timeline-item::before{
   content:"";
-  width:12px;
-  height:12px;
+  width:14px;
+  height:14px;
   background:var(--roxo);
   border-radius:50%;
   position:absolute;
-  left:-39px;
+  left:-44px;
   top:6px;
-  box-shadow:0 0 15px var(--roxo);
+  box-shadow:0 0 20px var(--roxo);
 }
 
 .timeline-item span{
   font-size:.8rem;
-  color:rgba(255,255,255,.55);
+  color:rgba(255,255,255,.5);
 }
 
 .timeline-item h4{
   margin:10px 0;
-  font-size:1.3rem;
+  font-size:1.35rem;
 }
 
 
 footer{
   border-top:1px solid rgba(255,255,255,.12);
-  margin-top:150px;
-  padding:55px 20px;
+  margin-top:160px;
+  padding:60px 24px;
   text-align:center;
   font-size:.85rem;
   color:var(--muted);
@@ -191,78 +190,75 @@ footer{
 
 <body>
 
-<header>
+<section class="hero">
   <h1>AxolotlBR</h1>
   <p>
-    AxolotlBR é um projeto em desenvolvimento focado na criação de um ambiente
-    digital moderno para comunidades gamers, criadores e iniciativas colaborativas.
-  </p>
-</header>
-
-<section class="section">
-  <h2>Visão do Projeto</h2>
-  <p>
-    O AxolotlBR nasce com o objetivo de unificar experiências interativas,
-    oferecendo uma base sólida para crescimento contínuo e expansão futura.
+    AxolotlBR é um projeto digital em evolução, focado na criação de um ecossistema
+    moderno para comunidades gamers, criadores, desenvolvedores e experiências interativas.
   </p>
 </section>
 
-<div class="divider"></div>
-
 <section class="section">
-  <h2>Destaques Atuais</h2>
+  <h2>Visão Geral</h2>
   <div class="grid">
     <div class="card">
-      <h3>Estrutura Definida</h3>
-      <p>Base visual e organizacional preparada para expansão.</p>
-      <span class="tag">ativo</span>
+      <h3>Propósito</h3>
+      <p>Unificar projetos, pessoas e experiências em um ambiente organizado e escalável.</p>
     </div>
     <div class="card">
       <h3>Comunidade</h3>
-      <p>Planejamento de espaços colaborativos e eventos.</p>
-      <span class="tag">em progresso</span>
+      <p>Espaço colaborativo para interação, eventos e crescimento coletivo.</p>
     </div>
     <div class="card">
-      <h3>Escalabilidade</h3>
-      <p>Arquitetura pensada para crescimento sem retrabalho.</p>
-      <span class="tag">prioridade</span>
+      <h3>Criação</h3>
+      <p>Jogos, RPGs, ferramentas e conteúdos autorais.</p>
     </div>
   </div>
 </section>
 
 <section class="section">
-  <h2>O que estamos desenvolvendo</h2>
-  <div class="grid">
-    <div class="card"><h3>Comunidade</h3><p>Interação, eventos e integração externa.</p></div>
-    <div class="card"><h3>Jogos & RPG</h3><p>Sistemas narrativos e experiências autorais.</p></div>
-    <div class="card"><h3>Ferramentas</h3><p>Recursos internos para organização.</p></div>
-    <div class="card"><h3>Integrações</h3><p>Discord, GitHub, Roblox e outros.</p></div>
+  <h2>Estado Atual do Projeto</h2>
+  <div class="stats">
+    <div class="stat"><h4>0.9</h4><span>versão atual</span></div>
+    <div class="stat"><h4>4</h4><span>áreas principais</span></div>
+    <div class="stat"><h4>+10</h4><span>ideias em planejamento</span></div>
+    <div class="stat"><h4>100%</h4><span>em evolução</span></div>
   </div>
 </section>
 
 <section class="section">
-  <h2>Atualizações</h2>
+  <h2>Áreas em Desenvolvimento</h2>
+  <div class="grid">
+    <div class="card"><h3>Comunidade</h3><p>Interação, eventos e integração externa.</p><span class="tag">em progresso</span></div>
+    <div class="card"><h3>Jogos & RPG</h3><p>Sistemas narrativos e experiências próprias.</p><span class="tag">ativo</span></div>
+    <div class="card"><h3>Ferramentas</h3><p>Recursos internos e automações.</p><span class="tag">planejado</span></div>
+    <div class="card"><h3>Integrações</h3><p>Discord, GitHub, Roblox e outros.</p><span class="tag">fase inicial</span></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Linha do Tempo</h2>
   <div class="timeline">
     <div class="timeline-item">
       <span>build 0.9</span>
-      <h4>Refino visual</h4>
-      <p>Adição de efeitos visuais e melhoria da interação.</p>
+      <h4>Expansão visual</h4>
+      <p>Melhoria estética e novas seções.</p>
     </div>
     <div class="timeline-item">
-      <span>build 0.85</span>
-      <h4>Expansão</h4>
-      <p>Novas seções e organização de conteúdo.</p>
+      <span>build 0.9</span>
+      <h4>Base consolidada</h4>
+      <p>Estrutura e identidade definidas.</p>
     </div>
     <div class="timeline-item">
       <span>build 0.8</span>
-      <h4>Base moderna</h4>
-      <p>Estrutura principal definida.</p>
+      <h4>Fundação</h4>
+      <p>Conceito inicial do projeto.</p>
     </div>
   </div>
 </section>
 
 <footer>
-  AxolotlBR • projeto em desenvolvimento • build 0.9
+  AxolotlBR amo meu papai fabi 0.9
 </footer>
 
 </body>
