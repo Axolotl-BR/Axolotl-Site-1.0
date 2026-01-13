@@ -1,167 +1,198 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>AxolotlBR</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AxolotlBR</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=League+Spartan:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
-  <style>
-    :root {
-      --preto: #0b0b0f;
-      --roxo-escarlate: #7a1cff;
-      --roxo-escuro: #2a0a4a;
-      --cinza: #cfcfd6;
-    }
+<style>
+:root{
+  --bg:#0e0b14;
+  --bg2:#15101f;
+  --card:#1c1630;
+  --roxo:#7a3cff;
+  --txt:#e6e3f0;
+  --muted:rgba(230,227,240,.65);
+}
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+*{margin:0;padding:0;box-sizing:border-box}
 
-    body {
-      background: var(--preto);
-      color: var(--cinza);
-      font-family: 'Poppins', sans-serif;
-    }
+body{
+  font-family:Inter,sans-serif;
+  background:linear-gradient(180deg,var(--bg),var(--bg2));
+  color:var(--txt);
+  line-height:1.6;
+}
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      padding: 20px 40px;
-      border-bottom: 1px solid rgba(122, 28, 255, 0.15);
-    }
+/* ===== HEADER ===== */
+header{
+  padding:90px 20px 70px;
+  max-width:1200px;
+  margin:auto;
+}
 
-    .logo {
-      font-family: 'LOVELO', sans-serif;
-      color: var(--roxo-escarlate);
-      font-size: 22px;
-      letter-spacing: 1px;
-    }
+header h1{
+  font-size:3rem;
+  font-weight:800;
+  color:var(--roxo);
+}
 
-    nav a {
-      margin-left: 20px;
-      text-decoration: none;
-      color: var(--cinza);
-      position: relative;
-    }
+header p{
+  margin-top:15px;
+  max-width:700px;
+  color:var(--muted);
+}
 
-    nav a::after {
-      content: "";
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0%;
-      height: 2px;
-      background: var(--roxo-escarlate);
-      transition: width 0.3s;
-    }
+/* ===== SECTIONS ===== */
+.section{
+  max-width:1200px;
+  margin:90px auto;
+  padding:0 20px;
+}
 
-    nav a:hover::after {
-      width: 100%;
-    }
+.section h2{
+  font-size:2rem;
+  font-weight:700;
+  margin-bottom:25px;
+}
 
-    .hero {
-      padding: 80px 40px;
-      max-width: 800px;
-    }
+.section p{
+  max-width:900px;
+  color:var(--muted);
+  margin-bottom:20px;
+}
 
-    .hero h1 {
-      font-family: 'Horizon', sans-serif;
-      color: var(--roxo-escarlate);
-      font-size: 48px;
-      margin-bottom: 20px;
-    }
+/* ===== GRID ===== */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:25px;
+}
 
-    .hero p {
-      margin-bottom: 30px;
-      opacity: 0.8;
-    }
+/* ===== CARDS ===== */
+.card{
+  background:var(--card);
+  border:1px solid rgba(122,60,255,.25);
+  border-radius:14px;
+  padding:25px;
+  transition:.25s;
+}
 
-    .btn {
-      background: transparent;
-      color: var(--roxo-escarlate);
-      border: 1px solid var(--roxo-escarlate);
-      padding: 12px 24px;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
+.card:hover{
+  transform:translateY(-5px);
+}
 
-    .btn:hover {
-      background: var(--roxo-escarlate);
-      color: #fff;
-      box-shadow: 0 0 15px rgba(122, 28, 255, 0.6);
-    }
+.card h3{
+  font-size:1.3rem;
+  margin-bottom:10px;
+}
 
-    section {
-      padding: 60px 40px;
-    }
+.card p{
+  font-size:.95rem;
+}
 
-    h2 {
-      font-family: 'League Spartan', sans-serif;
-      margin-bottom: 30px;
-    }
+/* ===== LIST ===== */
+.list{
+  margin-top:20px;
+}
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-    }
+.list li{
+  margin-bottom:10px;
+  color:var(--muted);
+}
 
-    .card {
-      background: #12091f;
-      border: 1px solid var(--roxo-escuro);
-      padding: 30px;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
+/* ===== STATUS ===== */
+.status{
+  margin-top:15px;
+  font-size:.8rem;
+  color:rgba(255,255,255,.5);
+}
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 20px rgba(122, 28, 255, 0.3);
-    }
-
-    footer {
-      text-align: center;
-      padding: 30px;
-      font-size: 14px;
-      opacity: 0.6;
-    }
-  </style>
+/* ===== FOOTER ===== */
+footer{
+  border-top:1px solid rgba(255,255,255,.08);
+  margin-top:120px;
+  padding:40px 20px;
+  text-align:center;
+  font-size:.85rem;
+  color:var(--muted);
+}
+</style>
 </head>
+
 <body>
 
-  <header>
-    <div class="logo">AxolotlBR</div>
-    <nav>
-      <a href="#">Início</a>
-      <a href="#">Sobre</a>
-      <a href="#">Projetos</a>
-    </nav>
-  </header>
+<header>
+  <h1>AxolotlBR</h1>
+  <p>
+    O AxolotlBR é um projeto em desenvolvimento focado na criação de um espaço
+    digital para comunidades gamers, criadores e desenvolvedores.
+  </p>
+</header>
 
-  <main>
-    <section class="hero">
-      <h1>Comunidade Axolotl</h1>
-      <p>Projeto em desenvolvimento focado em tecnologia, bots e ideias experimentais.</p>
-      <button class="btn">Entrar no Discord</button>
-    </section>
+<section class="section">
+  <h2>Sobre o Projeto</h2>
+  <p>
+    A proposta do AxolotlBR é centralizar diferentes experiências em um único
+    ambiente, permitindo integração entre jogos, comunidades e projetos criativos.
+  </p>
+  <p>
+    Atualmente o projeto se encontra em fase de estruturação e testes internos.
+  </p>
+</section>
 
-    <section>
-      <h2>O que estamos fazendo</h2>
-      <div class="cards">
-        <div class="card">Bots para Discord</div>
-        <div class="card">Projetos Web</div>
-        <div class="card">Conteúdo Educacional</div>
-      </div>
-    </section>
-  </main>
+<section class="section">
+  <h2>Áreas Planejadas</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Comunidade</h3>
+      <p>Espaços para interação entre membros, eventos e grupos temáticos.</p>
+      <div class="status">status: em construção</div>
+    </div>
+    <div class="card">
+      <h3>Jogos & RPG</h3>
+      <p>Projetos próprios, sistemas de RPG e experiências narrativas.</p>
+      <div class="status">status: planejamento</div>
+    </div>
+    <div class="card">
+      <h3>Ferramentas</h3>
+      <p>Recursos internos voltados para organização e suporte da comunidade.</p>
+      <div class="status">status: protótipo</div>
+    </div>
+    <div class="card">
+      <h3>Integrações</h3>
+      <p>Conexão com plataformas externas como Discord, GitHub e Roblox.</p>
+      <div class="status">status: parcial</div>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    Projeto em construção • AxolotlBR
-  </footer>
+<section class="section">
+  <h2>Objetivos</h2>
+  <ul class="list">
+    <li>Unificar projetos e comunidades em um só ambiente</li>
+    <li>Facilitar comunicação e colaboração</li>
+    <li>Criar experiências interativas contínuas</li>
+    <li>Expandir gradualmente com base no feedback</li>
+  </ul>
+</section>
+
+<section class="section">
+  <h2>Estado Atual</h2>
+  <p>
+    O site apresentado representa uma versão intermediária do projeto.
+    Diversas funcionalidades e conteúdos ainda serão adicionados nas próximas etapas.
+  </p>
+</section>
+
+<footer>
+  AxolotlBR • versão em desenvolvimento • build 0.7
+</footer>
 
 </body>
 </html>
+
 
