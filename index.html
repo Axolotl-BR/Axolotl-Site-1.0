@@ -5,43 +5,127 @@
   <title>AxolotlBR</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&family=League+Spartan:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
-    body {
+    :root {
+      --preto: #0b0b0f;
+      --roxo-escarlate: #7a1cff;
+      --roxo-escuro: #2a0a4a;
+      --cinza: #cfcfd6;
+    }
+
+    * {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #120822;
-      color: #eee;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--preto);
+      color: var(--cinza);
+      font-family: 'Poppins', sans-serif;
     }
 
     header {
-      padding: 20px;
-      background: #1a0b2e;
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 40px;
+      border-bottom: 1px solid rgba(122, 28, 255, 0.15);
+    }
+
+    .logo {
+      font-family: 'LOVELO', sans-serif;
+      color: var(--roxo-escarlate);
+      font-size: 22px;
+      letter-spacing: 1px;
     }
 
     nav a {
-      margin-right: 15px;
-      color: #ccc;
+      margin-left: 20px;
       text-decoration: none;
+      color: var(--cinza);
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--roxo-escarlate);
+      transition: width 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .hero {
+      padding: 80px 40px;
+      max-width: 800px;
+    }
+
+    .hero h1 {
+      font-family: 'Horizon', sans-serif;
+      color: var(--roxo-escarlate);
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      margin-bottom: 30px;
+      opacity: 0.8;
+    }
+
+    .btn {
+      background: transparent;
+      color: var(--roxo-escarlate);
+      border: 1px solid var(--roxo-escarlate);
+      padding: 12px 24px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .btn:hover {
+      background: var(--roxo-escarlate);
+      color: #fff;
+      box-shadow: 0 0 15px rgba(122, 28, 255, 0.6);
     }
 
     section {
-      padding: 60px 20px;
+      padding: 60px 40px;
     }
 
-    h1, h2 {
-      color: #ff3e80;
+    h2 {
+      font-family: 'League Spartan', sans-serif;
+      margin-bottom: 30px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
     }
 
     .card {
-      background: #1e1033;
-      padding: 20px;
-      margin-top: 20px;
-      border-radius: 8px;
+      background: #12091f;
+      border: 1px solid var(--roxo-escuro);
+      padding: 30px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(122, 28, 255, 0.3);
     }
 
     footer {
-      padding: 30px;
       text-align: center;
+      padding: 30px;
       font-size: 14px;
       opacity: 0.6;
     }
@@ -49,40 +133,35 @@
 </head>
 <body>
 
-<header>
-  <nav>
-    <a href="#home">Início</a>
-    <a href="#about">Sobre</a>
-    <a href="#services">Projetos</a>
-  </nav>
-</header>
+  <header>
+    <div class="logo">AxolotlBR</div>
+    <nav>
+      <a href="#">Início</a>
+      <a href="#">Sobre</a>
+      <a href="#">Projetos</a>
+    </nav>
+  </header>
 
-<section id="home">
-  <h1>AxolotlBR</h1>
-  <p>Projeto experimental de comunidade e desenvolvimento.</p>
-  <!-- TODO: melhorar texto -->
-</section>
+  <main>
+    <section class="hero">
+      <h1>Comunidade Axolotl</h1>
+      <p>Projeto em desenvolvimento focado em tecnologia, bots e ideias experimentais.</p>
+      <button class="btn">Entrar no Discord</button>
+    </section>
 
-<section id="about">
-  <h2>Sobre</h2>
-  <div class="card">
-    <p>
-      Comunidade focada em programação, bots e projetos digitais.
-      Ainda em desenvolvimento. 
-    </p>
-  </div>
-</section>
+    <section>
+      <h2>O que estamos fazendo</h2>
+      <div class="cards">
+        <div class="card">Bots para Discord</div>
+        <div class="card">Projetos Web</div>
+        <div class="card">Conteúdo Educacional</div>
+      </div>
+    </section>
+  </main>
 
-<section id="services">
-  <h2>O que estamos fazendo</h2>
-  <div class="card">Bots para Discord</div>
-  <div class="card">Projetos educacionais</div>
-  <div class="card">Experimentos uebis hihi fabi my dad</div>
-</section>
-
-<footer>
-  AxolotlBR — projeto em construção 🧪
-</footer>
+  <footer>
+    Projeto em construção • AxolotlBR
+  </footer>
 
 </body>
 </html>
