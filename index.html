@@ -5,185 +5,155 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AxolotlBR</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=League+Spartan:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-:root{
-  --bg:#0b0814;
-  --bg2:#120d23;
-  --card:#1b1633;
-  --roxo:#7a3cff;
-  --roxo2:#b18cff;
-  --txt:#f0eef8;
-  --muted:rgba(240,238,248,.65);
+@font-face {
+  font-family: 'Horizon';
+  src: url('fonts/Horizon.otf');
+}
+@font-face {
+  font-family: 'More Sugar';
+  src: url('fonts/MoreSugar.ttf');
+}
+@font-face {
+  font-family: 'LOVELO';
+  src: url('fonts/LOVELO.ttf');
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
 
+:root{
+  --bg:#07040f;
+  --bg2:#120821;
+  --card:#160d2c;
+  --roxo:#7b3cff;
+  --pink:#c77dff;
+  --txt:#f4f1ff;
+  --muted:rgba(244,241,255,.65);
+}
 body{
-  font-family:Inter,sans-serif;
+  font-family:'Poppins',sans-serif;
   background:
-    radial-gradient(circle at top, rgba(122,60,255,.15), transparent 45%),
+    radial-gradient(circle at 20% 0%, rgba(123,60,255,.25), transparent 45%),
+    radial-gradient(circle at 80% 10%, rgba(199,125,255,.18), transparent 50%),
     linear-gradient(180deg,var(--bg),var(--bg2));
   color:var(--txt);
   line-height:1.7;
 }
 
 .hero{
-  max-width:1300px;
+  max-width:1400px;
   margin:auto;
-  padding:140px 24px 120px;
+  padding:160px 28px 140px;
 }
 
 .hero h1{
-  font-size:4rem;
-  font-weight:900;
-  background:linear-gradient(135deg,var(--roxo),var(--roxo2));
+  font-family:'Horizon','LOVELO','League Spartan',sans-serif;
+  font-size:5rem;
+  letter-spacing:3px;
+  background:linear-gradient(135deg,var(--roxo),var(--pink));
   -webkit-background-clip:text;
   color:transparent;
 }
 
 .hero p{
-  margin-top:22px;
-  max-width:820px;
-  font-size:1.05rem;
+  margin-top:30px;
+  max-width:900px;
+  font-size:1.15rem;
   color:var(--muted);
 }
 
 .section{
-  max-width:1300px;
-  margin:120px auto;
-  padding:0 24px;
+  max-width:1400px;
+  margin:140px auto;
+  padding:0 28px;
 }
 
 .section h2{
-  font-size:2.5rem;
-  font-weight:800;
-  margin-bottom:40px;
+  font-family:'League Spartan',sans-serif;
+  font-size:2.8rem;
+  margin-bottom:50px;
+  letter-spacing:1px;
 }
-
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:34px;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:40px;
 }
 
 .card{
   background:
     linear-gradient(180deg, rgba(255,255,255,.05), transparent),
     var(--card);
-  border:1px solid rgba(122,60,255,.35);
-  border-radius:22px;
-  padding:36px;
+  border:1px solid rgba(123,60,255,.4);
+  border-radius:28px;
+  padding:42px;
   position:relative;
-  transition:.4s ease;
   overflow:hidden;
+  transition:.45s cubic-bezier(.2,.8,.2,1);
 }
 
 .card::before{
   content:"";
   position:absolute;
   inset:0;
-  background:radial-gradient(circle at top,var(--roxo),transparent 65%);
-  opacity:.18;
-  pointer-events:none;
+  background:
+    radial-gradient(circle at top left,var(--roxo),transparent 60%),
+    radial-gradient(circle at bottom right,var(--pink),transparent 60%);
+  opacity:.15;
 }
 
 .card:hover{
-  transform:translateY(-12px);
-  box-shadow:0 30px 65px rgba(122,60,255,.45);
+  transform:translateY(-14px) scale(1.02);
+  border-color:var(--pink);
 }
 
 .card h3{
-  font-size:1.5rem;
-  margin-bottom:14px;
+  font-family:'League Spartan',sans-serif;
+  font-size:1.7rem;
+  margin-bottom:18px;
 }
 
 .card p{
-  font-size:.97rem;
   color:var(--muted);
 }
-
-
-.stats{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:30px;
-}
-
-.stat{
-  text-align:center;
-  padding:35px;
-  border-radius:20px;
-  background:rgba(122,60,255,.12);
-  border:1px solid rgba(122,60,255,.35);
-}
-
-.stat h4{
-  font-size:2.6rem;
-  font-weight:900;
-  color:var(--roxo2);
-}
-
-.stat span{
-  display:block;
-  margin-top:8px;
-  font-size:.9rem;
-  color:var(--muted);
-}
-
 
 .tag{
   display:inline-block;
-  margin-top:18px;
-  padding:8px 20px;
-  border-radius:50px;
+  margin-top:22px;
+  padding:8px 18px;
+  border-radius:999px;
+  background:rgba(123,60,255,.2);
+  border:1px solid rgba(199,125,255,.4);
+  font-family:'More Sugar','Poppins',sans-serif;
+  letter-spacing:2px;
   font-size:.75rem;
-  background:rgba(122,60,255,.3);
-  color:#e9ddff;
 }
 
-
-.timeline{
-  border-left:2px solid rgba(122,60,255,.7);
-  padding-left:36px;
+.info-strip{
+  margin-top:80px;
+  padding:50px;
+  border-radius:30px;
+  background:linear-gradient(135deg,rgba(123,60,255,.2),rgba(199,125,255,.1));
+  border:1px solid rgba(199,125,255,.35);
+  font-family:'League Spartan',sans-serif;
+  font-size:1.1rem;
 }
-
-.timeline-item{
-  margin-bottom:50px;
-  position:relative;
-}
-
-.timeline-item::before{
-  content:"";
-  width:14px;
-  height:14px;
-  background:var(--roxo);
-  border-radius:50%;
-  position:absolute;
-  left:-44px;
-  top:6px;
-  box-shadow:0 0 20px var(--roxo);
-}
-
-.timeline-item span{
-  font-size:.8rem;
-  color:rgba(255,255,255,.5);
-}
-
-.timeline-item h4{
-  margin:10px 0;
-  font-size:1.35rem;
-}
-
 
 footer{
-  border-top:1px solid rgba(255,255,255,.12);
   margin-top:160px;
-  padding:60px 24px;
+  padding:60px 28px;
   text-align:center;
-  font-size:.85rem;
   color:var(--muted);
+  border-top:1px solid rgba(123,60,255,.3);
+  font-family:'LOVELO','Poppins',sans-serif;
+  letter-spacing:2px;
+}
+
+@media(max-width:768px){
+  .hero h1{font-size:3.4rem}
+  .section h2{font-size:2.2rem}
 }
 </style>
 </head>
@@ -191,75 +161,78 @@ footer{
 <body>
 
 <section class="hero">
-  <h1>AxolotlBR</h1>
+  <h1>AXOLOTLBR</h1>
   <p>
-    AxolotlBR é um projeto digital em evolução, focado na criação de um ecossistema
-    moderno para comunidades gamers, criadores, desenvolvedores e experiências interativas.
+    Plataforma em desenvolvimento focada em tecnologia, criatividade digital,
+    experiências interativas e projetos experimentais. Estrutura pensada para
+    crescimento contínuo e colaboração.
   </p>
 </section>
 
 <section class="section">
-  <h2>Visão Geral</h2>
+  <h2>O Projeto</h2>
   <div class="grid">
     <div class="card">
-      <h3>Propósito</h3>
-      <p>Unificar projetos, pessoas e experiências em um ambiente organizado e escalável.</p>
+      <h3>Identidade</h3>
+      <p>
+        AxolotlBR nasce como um hub criativo, misturando tecnologia, design e
+        desenvolvimento de ideias digitais modernas.
+      </p>
+      <span class="tag">CONCEITO</span>
     </div>
+
     <div class="card">
-      <h3>Comunidade</h3>
-      <p>Espaço colaborativo para interação, eventos e crescimento coletivo.</p>
+      <h3>Objetivo</h3>
+      <p>
+        Criar uma base sólida para projetos web, experimentos visuais,
+        automações e sistemas em evolução.
+      </p>
+      <span class="tag">PLANEJAMENTO</span>
     </div>
+
     <div class="card">
-      <h3>Criação</h3>
-      <p>Jogos, RPGs, ferramentas e conteúdos autorais.</p>
+      <h3>Colaboração</h3>
+      <p>
+        Estrutura pensada para múltiplos contribuidores, com organização clara
+        e facilidade de expansão.
+      </p>
+      <span class="tag">EQUIPE</span>
     </div>
   </div>
 </section>
 
 <section class="section">
-  <h2>Estado Atual do Projeto</h2>
-  <div class="stats">
-    <div class="stat"><h4>0.9</h4><span>versão atual</span></div>
-    <div class="stat"><h4>4</h4><span>áreas principais</span></div>
-    <div class="stat"><h4>+10</h4><span>ideias em planejamento</span></div>
-    <div class="stat"><h4>100%</h4><span>em evolução</span></div>
-  </div>
-</section>
-
-<section class="section">
-  <h2>Áreas em Desenvolvimento</h2>
+  <h2>Áreas Ativas</h2>
   <div class="grid">
-    <div class="card"><h3>Comunidade</h3><p>Interação, eventos e integração externa.</p><span class="tag">em progresso</span></div>
-    <div class="card"><h3>Jogos & RPG</h3><p>Sistemas narrativos e experiências próprias.</p><span class="tag">ativo</span></div>
-    <div class="card"><h3>Ferramentas</h3><p>Recursos internos e automações.</p><span class="tag">planejado</span></div>
-    <div class="card"><h3>Integrações</h3><p>Discord, GitHub, Roblox e outros.</p><span class="tag">fase inicial</span></div>
-  </div>
-</section>
+    <div class="card">
+      <h3>Web & UI</h3>
+      <p>Criação de interfaces modernas, responsivas e visualmente impactantes.</p>
+      <span class="tag">FRONT-END</span>
+    </div>
 
-<section class="section">
-  <h2>Linha do Tempo</h2>
-  <div class="timeline">
-    <div class="timeline-item">
-      <span>build 0.9</span>
-      <h4>Expansão visual</h4>
-      <p>Melhoria estética e novas seções.</p>
+    <div class="card">
+      <h3>Experimentos</h3>
+      <p>Testes visuais, conceitos criativos e ideias fora do padrão.</p>
+      <span class="tag">LAB</span>
     </div>
-    <div class="timeline-item">
-      <span>build 0.9</span>
-      <h4>Base consolidada</h4>
-      <p>Estrutura e identidade definidas.</p>
+
+    <div class="card">
+      <h3>Sistemas</h3>
+      <p>Estruturação de projetos técnicos, automações e lógica de sistemas.</p>
+      <span class="tag">DEV</span>
     </div>
-    <div class="timeline-item">
-      <span>build 0.8</span>
-      <h4>Fundação</h4>
-      <p>Conceito inicial do projeto.</p>
-    </div>
+  </div>
+
+  <div class="info-strip">
+    Projeto em fase de expansão contínua. Novos módulos, melhorias visuais e
+    funcionalidades serão adicionados progressivamente.
   </div>
 </section>
 
 <footer>
-  AxolotlBR amo meu papai fabi 0.9
+  AXOLOTLBR 
 </footer>
 
 </body>
 </html>
+
