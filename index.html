@@ -8,20 +8,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=League+Spartan:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-@font-face {
-  font-family: 'Horizon';
-  src: url('fonts/Horizon.otf');
-}
-@font-face {
-  font-family: 'More Sugar';
-  src: url('fonts/MoreSugar.ttf');
-}
-@font-face {
-  font-family: 'LOVELO';
-  src: url('fonts/LOVELO.ttf');
-}
+
+@font-face { font-family:'Horizon'; src:url('fonts/Horizon.otf'); }
+@font-face { font-family:'More Sugar'; src:url('fonts/MoreSugar.ttf'); }
+@font-face { font-family:'LOVELO'; src:url('fonts/LOVELO.ttf'); }
 
 *{margin:0;padding:0;box-sizing:border-box}
+
 
 :root{
   --bg:#07040f;
@@ -32,6 +25,7 @@
   --txt:#f4f1ff;
   --muted:rgba(244,241,255,.65);
 }
+
 body{
   font-family:'Poppins',sans-serif;
   background:
@@ -42,15 +36,71 @@ body{
   line-height:1.7;
 }
 
+.header{
+  position:fixed;
+  top:0; left:0;
+  width:100%;
+  z-index:1000;
+  backdrop-filter:blur(18px);
+  background:rgba(7,4,15,.75);
+  border-bottom:1px solid rgba(123,60,255,.35);
+  transition:transform .35s ease;
+}
+.header.hide{ transform:translateY(-100%); }
+
+.header-content{
+  max-width:1400px;
+  margin:auto;
+  padding:18px 28px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-family:'Horizon','LOVELO','League Spartan',sans-serif;
+  letter-spacing:3px;
+  font-size:1.6rem;
+  background:linear-gradient(135deg,var(--roxo),var(--pink));
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.nav{
+  display:flex;
+  gap:28px;
+}
+
+.nav a{
+  text-decoration:none;
+  color:var(--muted);
+  font-weight:500;
+  position:relative;
+}
+
+.nav a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0%;
+  height:2px;
+  background:linear-gradient(90deg,var(--roxo),var(--pink));
+  transition:.3s;
+}
+
+.nav a:hover{color:var(--txt)}
+.nav a:hover::after{width:100%}
+
 .hero{
   max-width:1400px;
   margin:auto;
-  padding:160px 28px 140px;
+  padding:220px 28px 140px;
 }
 
 .hero h1{
   font-family:'Horizon','LOVELO','League Spartan',sans-serif;
-  font-size:5rem;
+  font-size:4.8rem;
   letter-spacing:3px;
   background:linear-gradient(135deg,var(--roxo),var(--pink));
   -webkit-background-clip:text;
@@ -72,10 +122,10 @@ body{
 
 .section h2{
   font-family:'League Spartan',sans-serif;
-  font-size:2.8rem;
+  font-size:2.6rem;
   margin-bottom:50px;
-  letter-spacing:1px;
 }
+
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -89,23 +139,11 @@ body{
   border:1px solid rgba(123,60,255,.4);
   border-radius:28px;
   padding:42px;
-  position:relative;
-  overflow:hidden;
   transition:.45s cubic-bezier(.2,.8,.2,1);
 }
 
-.card::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:
-    radial-gradient(circle at top left,var(--roxo),transparent 60%),
-    radial-gradient(circle at bottom right,var(--pink),transparent 60%);
-  opacity:.15;
-}
-
 .card:hover{
-  transform:translateY(-14px) scale(1.02);
+  transform:translateY(-14px);
   border-color:var(--pink);
 }
 
@@ -115,9 +153,7 @@ body{
   margin-bottom:18px;
 }
 
-.card p{
-  color:var(--muted);
-}
+.card p{color:var(--muted)}
 
 .tag{
   display:inline-block;
@@ -150,89 +186,100 @@ footer{
   font-family:'LOVELO','Poppins',sans-serif;
   letter-spacing:2px;
 }
-
 @media(max-width:768px){
-  .hero h1{font-size:3.4rem}
-  .section h2{font-size:2.2rem}
+  .hero h1{font-size:3.2rem}
+  .nav{display:none}
 }
 </style>
 </head>
 
 <body>
 
-<section class="hero">
+<header class="header" id="header">
+  <div class="header-content">
+    <div class="logo">AXOLOTLBR</div>
+    <nav class="nav">
+      <a href="#inicio">Início</a>
+      <a href="#projeto">Projeto</a>
+      <a href="#areas">Áreas</a>
+      <a href="#status">Status</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
   <h1>AXOLOTLBR</h1>
   <p>
-    Plataforma em desenvolvimento focada em tecnologia, criatividade digital,
-    experiências interativas e projetos experimentais. Estrutura pensada para
-    crescimento contínuo e colaboração.
+    Plataforma em desenvolvimento focada em tecnologia, design e experiências digitais.
+    Estrutura pensada para crescer, receber colaboradores e evoluir continuamente.
   </p>
 </section>
 
-<section class="section">
+<section class="section" id="projeto">
   <h2>O Projeto</h2>
   <div class="grid">
     <div class="card">
       <h3>Identidade</h3>
-      <p>
-        AxolotlBR nasce como um hub criativo, misturando tecnologia, design e
-        desenvolvimento de ideias digitais modernas.
-      </p>
+      <p>Um hub criativo que une código, estética e experimentação digital.</p>
       <span class="tag">CONCEITO</span>
     </div>
-
     <div class="card">
       <h3>Objetivo</h3>
-      <p>
-        Criar uma base sólida para projetos web, experimentos visuais,
-        automações e sistemas em evolução.
-      </p>
+      <p>Servir como base para projetos web, sistemas e ideias em constante evolução.</p>
       <span class="tag">PLANEJAMENTO</span>
     </div>
-
     <div class="card">
       <h3>Colaboração</h3>
-      <p>
-        Estrutura pensada para múltiplos contribuidores, com organização clara
-        e facilidade de expansão.
-      </p>
+      <p>Estrutura simples e organizada para múltiplas pessoas contribuírem.</p>
       <span class="tag">EQUIPE</span>
     </div>
   </div>
 </section>
 
-<section class="section">
+<section class="section" id="areas">
   <h2>Áreas Ativas</h2>
   <div class="grid">
     <div class="card">
       <h3>Web & UI</h3>
-      <p>Criação de interfaces modernas, responsivas e visualmente impactantes.</p>
+      <p>Interfaces modernas, responsivas e focadas em experiência visual.</p>
       <span class="tag">FRONT-END</span>
     </div>
-
     <div class="card">
       <h3>Experimentos</h3>
-      <p>Testes visuais, conceitos criativos e ideias fora do padrão.</p>
+      <p>Testes criativos, conceitos visuais e ideias fora do padrão.</p>
       <span class="tag">LAB</span>
     </div>
-
     <div class="card">
       <h3>Sistemas</h3>
-      <p>Estruturação de projetos técnicos, automações e lógica de sistemas.</p>
+      <p>Estruturação lógica, automações e arquitetura de projetos.</p>
       <span class="tag">DEV</span>
     </div>
   </div>
 
-  <div class="info-strip">
-    Projeto em fase de expansão contínua. Novos módulos, melhorias visuais e
-    funcionalidades serão adicionados progressivamente.
+  <div class="info-strip" id="status">
+    Projeto em fase de expansão. Novos módulos, melhorias visuais e funcionalidades
+    serão adicionados progressivamente conforme o desenvolvimento avança.
   </div>
 </section>
 
 <footer>
-  AXOLOTLBR 
+  AXOLOTLBR • PROJETO EM DESENVOLVIMENTO
 </footer>
+
+<script>
+let lastScroll = 0;
+const header = document.getElementById("header");
+
+window.addEventListener("scroll", () => {
+  const current = window.pageYOffset;
+  if(current > lastScroll && current > 100){
+    header.classList.add("hide");
+  } else {
+    header.classList.remove("hide");
+  }
+  lastScroll = current;
+});
+</script>
 
 </body>
 </html>
-
