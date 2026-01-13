@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AxolotlBR</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
@@ -24,12 +23,12 @@ body{
   font-family:Inter,sans-serif;
   background:linear-gradient(180deg,var(--bg),var(--bg2));
   color:var(--txt);
-  line-height:1.6;
+  line-height:1.65;
 }
 
 
 header{
-  padding:90px 20px 70px;
+  padding:100px 20px 70px;
   max-width:1200px;
   margin:auto;
 }
@@ -41,52 +40,46 @@ header h1{
 }
 
 header p{
-  margin-top:15px;
-  max-width:700px;
+  margin-top:18px;
+  max-width:720px;
   color:var(--muted);
 }
 
 
 .section{
   max-width:1200px;
-  margin:90px auto;
+  margin:100px auto;
   padding:0 20px;
 }
 
 .section h2{
-  font-size:2rem;
+  font-size:2.1rem;
   font-weight:700;
   margin-bottom:25px;
 }
 
 .section p{
   max-width:900px;
-  color:var(--muted);
   margin-bottom:20px;
+  color:var(--muted);
 }
 
 
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:25px;
+  gap:28px;
 }
-
 
 .card{
   background:var(--card);
   border:1px solid rgba(122,60,255,.25);
   border-radius:14px;
-  padding:25px;
-  transition:.25s;
-}
-
-.card:hover{
-  transform:translateY(-5px);
+  padding:26px;
 }
 
 .card h3{
-  font-size:1.3rem;
+  font-size:1.25rem;
   margin-bottom:10px;
 }
 
@@ -95,27 +88,42 @@ header p{
 }
 
 
-.list{
-  margin-top:20px;
+.roadmap{
+  display:flex;
+  flex-direction:column;
+  gap:30px;
 }
 
-.list li{
-  margin-bottom:10px;
-  color:var(--muted);
+.phase{
+  background:var(--card);
+  border-left:4px solid var(--roxo);
+  padding:25px;
+  border-radius:10px;
 }
 
-
-.status{
-  margin-top:15px;
+.phase span{
   font-size:.8rem;
   color:rgba(255,255,255,.5);
 }
 
+.phase h3{
+  margin:10px 0;
+  font-size:1.3rem;
+}
+
+.phase ul{
+  margin-left:18px;
+}
+
+.phase li{
+  margin-bottom:8px;
+  color:var(--muted);
+}
 
 footer{
   border-top:1px solid rgba(255,255,255,.08);
   margin-top:120px;
-  padding:40px 20px;
+  padding:45px 20px;
   text-align:center;
   font-size:.85rem;
   color:var(--muted);
@@ -128,69 +136,96 @@ footer{
 <header>
   <h1>AxolotlBR</h1>
   <p>
-    O AxolotlBR é um projeto em desenvolvimento focado na criação de um espaço
-    digital para comunidades gamers, criadores e desenvolvedores.
+    Plataforma em desenvolvimento voltada à integração de comunidades gamers,
+    projetos criativos e experiências interativas.
   </p>
 </header>
 
 <section class="section">
-  <h2>Sobre o Projeto</h2>
+  <h2>Visão Geral</h2>
   <p>
-    A proposta do AxolotlBR é centralizar diferentes experiências em um único
-    ambiente, permitindo integração entre jogos, comunidades e projetos criativos.
+    O AxolotlBR foi idealizado como um ambiente unificado, capaz de conectar
+    pessoas, conteúdos e sistemas em constante evolução.
   </p>
   <p>
-    Atualmente o projeto se encontra em fase de estruturação e testes internos.
+    O projeto segue uma abordagem incremental, priorizando estrutura sólida
+    antes da expansão completa de funcionalidades.
   </p>
 </section>
 
 <section class="section">
-  <h2>Áreas Planejadas</h2>
+  <h2>Componentes do Projeto</h2>
   <div class="grid">
     <div class="card">
       <h3>Comunidade</h3>
-      <p>Espaços para interação entre membros, eventos e grupos temáticos.</p>
-      <div class="status">status: em construção</div>
+      <p>Espaços de interação, eventos internos e grupos organizados.</p>
     </div>
     <div class="card">
       <h3>Jogos & RPG</h3>
-      <p>Projetos próprios, sistemas de RPG e experiências narrativas.</p>
-      <div class="status">status: planejamento</div>
+      <p>Sistemas narrativos, campanhas e experiências autorais.</p>
     </div>
     <div class="card">
-      <h3>Ferramentas</h3>
-      <p>Recursos internos voltados para organização e suporte da comunidade.</p>
-      <div class="status">status: protótipo</div>
+      <h3>Ferramentas Internas</h3>
+      <p>Recursos voltados à organização e suporte do ecossistema.</p>
     </div>
     <div class="card">
       <h3>Integrações</h3>
-      <p>Conexão com plataformas externas como Discord, GitHub e Roblox.</p>
-      <div class="status">status: parcial</div>
+      <p>Conexão com plataformas externas e serviços complementares.</p>
     </div>
   </div>
 </section>
 
 <section class="section">
-  <h2>Objetivos</h2>
-  <ul class="list">
-    <li>Unificar projetos e comunidades em um só ambiente</li>
-    <li>Facilitar comunicação e colaboração</li>
-    <li>Criar experiências interativas contínuas</li>
-    <li>Expandir gradualmente com base no feedback</li>
-  </ul>
+  <h2>Roadmap Inicial</h2>
+
+  <div class="roadmap">
+
+    <div class="phase">
+      <span>Fase 1 • atual</span>
+      <h3>Estrutura & Planejamento</h3>
+      <ul>
+        <li>Definição de identidade do projeto</li>
+        <li>Estrutura base do site</li>
+        <li>Organização das áreas principais</li>
+      </ul>
+    </div>
+
+    <div class="phase">
+      <span>Fase 2</span>
+      <h3>Expansão de Conteúdo</h3>
+      <ul>
+        <li>Publicação gradual de seções</li>
+        <li>Documentação interna</li>
+        <li>Integração inicial com comunidade</li>
+      </ul>
+    </div>
+
+    <div class="phase">
+      <span>Fase 3</span>
+      <h3>Funcionalidades Ativas</h3>
+      <ul>
+        <li>Sistemas interativos</li>
+        <li>Automação de processos</li>
+        <li>Eventos e experiências ao vivo</li>
+      </ul>
+    </div>
+
+  </div>
 </section>
 
 <section class="section">
-  <h2>Estado Atual</h2>
-  <p>naum ta pronto daddy fabix te amo gostoso perfeito
+  <h2>Status Atual</h2>
+  <p>
+    Esta versão representa um marco intermediário do projeto.
+    Ajustes visuais, conteúdos adicionais e novas integrações
+    serão incorporados conforme o avanço das fases.
   </p>
 </section>
 
 <footer>
-  AxolotlBR • versão em desenvolvimento • build 0.7
+  AxolotlBR • versão em desenvolvimento • build 0.75
 </footer>
 
 </body>
 </html>
-
 
