@@ -4,42 +4,59 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AxolotlBR</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=League+Spartan:wght@400;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./assets/css/style.css">
-</head>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=League+Spartan:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
 <body>
 
 <nav class="navbar">
   <div class="nav-logo">AxolotlBR</div>
-  <div>
-    <a href="./">Início</a>
-    <a href="./projetos/">Projetos</a>
-    <a href="./timeline/">Timeline</a>
-    <a href="./equipe/">Equipe</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="projetos.html">Projetos</a>
+    <a href="timeline.html">Timeline</a>
+    <a href="equipe.html">Equipe</a>
   </div>
 </nav>
 
-<section class="section">
-  <h1 class="section-title">Bem-vindo ao AxolotlBR</h1>
-  <p class="section-desc">
-    Um ecossistema criativo focado em tecnologia, jogos,
-    comunidade e experimentação contínua desde 2020.
-  </p>
+<section class="hero">
+  <div class="reveal">
+    <h1>Bem-vindo ao<br><span>AxolotlBR</span></h1>
+    <p>Comunidade criativa focada em tecnologia, jogos e sistemas desde 2020.</p>
+
+    <div class="hero-actions">
+      <a href="https://discord.gg/AxolotlBR" class="btn btn-primary">
+        <i class="fab fa-discord"></i> Entrar no Discord
+      </a>
+      <a href="https://github.com/Axolotl-BR" class="btn btn-outline">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+    </div>
+  </div>
 </section>
 
 <section class="section">
+  <h2 class="section-title reveal">O Ecossistema</h2>
+  <p class="section-desc reveal">
+    Tudo que o Axolotl construiu e continua expandindo.
+  </p>
+
   <div class="grid">
-    <div class="balloon"><h3>+4 anos</h3><p>Construindo projetos reais</p></div>
-    <div class="balloon"><h3>E3 Axolotl</h3><p>Visão completa do ecossistema</p></div>
-    <div class="balloon"><h3>Comunidade</h3><p>Discord ativo e colaborativo</p></div>
+    <div class="card reveal"><h3>SMP</h3><p>Servidor survival com lore.</p></div>
+    <div class="card reveal"><h3>BOT</h3><p>Bot Discord em Python.</p></div>
+    <div class="card reveal"><h3>Labs</h3><p>Automações e sistemas.</p></div>
   </div>
 </section>
 
 <footer>
-  🔌 Powered by Cool Axolotl CLUB © 2020 - 2026 by Fabi
+  🔌 Powered by Cool Axolotl CLUB © 2020 - 2026 by Fabi<br>
+  Todos os direitos reservados
 </footer>
 
-<script src="./assets/js/main.js"></script>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
+
