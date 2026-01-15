@@ -1,307 +1,52 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AxolotlBR</title>
+  <meta charset="UTF-8">
+  <title>AxolotlBR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=League+Spartan:wght@400;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<style>
-:root{
-  --bg:#050507;
-  --bg2:#0b0716;
-  --primary:#7c1cff;
-  --secondary:#b84cff;
-  --text:#f3f3f7;
-  --muted:#b6b1cc;
-  --card:rgba(255,255,255,.07);
-  --border:rgba(255,255,255,.12);
-}
-
-*{margin:0;padding:0;box-sizing:border-box}
-body{
-  font-family:Poppins,sans-serif;
-  background:
-    radial-gradient(circle at top,var(--bg2),var(--bg)),
-    repeating-linear-gradient(
-      0deg,
-      rgba(255,255,255,.03),
-      rgba(255,255,255,.03) 1px,
-      transparent 1px,
-      transparent 22px
-    );
-  color:var(--text);
-}
-
-/* NAV */
-.navbar{
-  position:fixed;
-  top:0;left:0;
-  width:100%;
-  padding:18px 60px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  background:rgba(5,5,7,.8);
-  backdrop-filter:blur(16px);
-  border-bottom:1px solid var(--border);
-  z-index:1000;
-}
-.nav-logo{
-  font-family:"League Spartan",sans-serif;
-  font-size:1.6rem;
-  font-weight:800;
-  color:var(--primary);
-}
-
-/* HERO */
-.hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  padding:140px 10% 80px;
-}
-.hero h1{
-  font-family:"League Spartan",sans-serif;
-  font-size:3.8rem;
-}
-.hero h1 span{color:var(--primary)}
-.hero p{
-  max-width:760px;
-  color:var(--muted);
-  margin:20px 0 36px;
-}
-
-/* BUTTON */
-.btn{
-  padding:16px 38px;
-  border-radius:40px;
-  font-weight:600;
-  text-decoration:none;
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  transition:.35s;
-}
-.btn-primary{
-  background:linear-gradient(135deg,var(--primary),var(--secondary));
-  color:white;
-}
-.btn-primary:hover{
-  transform:translateY(-4px);
-  box-shadow:0 0 45px rgba(124,28,255,.7);
-}
-
-/* SECTION */
-.section{padding:120px 10%}
-.section-title{
-  font-family:"League Spartan",sans-serif;
-  font-size:2.8rem;
-}
-.section-desc{
-  color:var(--muted);
-  margin:15px 0 60px;
-  max-width:780px;
-}
-
-/* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:36px;
-}
-
-/* BALÕES */
-.balloon{
-  background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.03));
-  border:1px solid var(--border);
-  border-radius:28px;
-  padding:36px;
-  cursor:pointer;
-  transition:.45s;
-}
-.balloon:hover{
-  transform:translateY(-14px) scale(1.01);
-  box-shadow:0 0 55px rgba(124,28,255,.45);
-}
-.balloon h3{margin-bottom:10px}
-.balloon p{color:var(--muted);font-size:.95rem}
-
-/* MODAL */
-.modal{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.8);
-  backdrop-filter:blur(14px);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  z-index:2000;
-}
-.modal.show{display:flex}
-.modal-content{
-  background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,.04));
-  border:1px solid var(--border);
-  border-radius:32px;
-  padding:46px;
-  max-width:700px;
-  width:90%;
-  box-shadow:0 0 90px rgba(124,28,255,.45);
-}
-.modal-content h3{
-  font-family:"League Spartan",sans-serif;
-  font-size:2.2rem;
-  margin-bottom:16px;
-}
-.modal-content p{color:var(--muted);line-height:1.7}
-.close{
-  margin-top:26px;
-  display:inline-block;
-  cursor:pointer;
-  color:var(--primary);
-  font-weight:600;
-}
-
-/* TEAM */
-.team-card{text-align:center}
-
-/* TIMELINE */
-.timeline{
-  border-left:2px solid var(--border);
-  padding-left:32px;
-}
-.timeline-item{
-  margin-bottom:42px;
-}
-.timeline-item h4{
-  color:var(--primary);
-  margin-bottom:8px;
-}
-
-/* FOOTER */
-footer{
-  padding:60px 10%;
-  border-top:1px solid var(--border);
-  background:rgba(0,0,0,.45);
-  text-align:center;
-  color:var(--muted);
-}
-</style>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=League+Spartan:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
 <nav class="navbar">
   <div class="nav-logo">AxolotlBR</div>
+  <div class="nav-links">
+    <a href="/">Início</a>
+    <a href="/projetos">Projetos</a>
+    <a href="/timeline">Timeline</a>
+    <a href="/equipe">Equipe</a>
+  </div>
 </nav>
 
-<section class="hero">
-  <div>
-    <h1>Bem-vindo ao <span>AxolotlBR</span></h1>
-    <p>
-      Um hub criativo focado em tecnologia, jogos e comunidades.
-      A E3 do Axolotl representa tudo que foi construído desde 2020
-      e o que ainda está por vir.
-    </p>
+<section class="hero reveal">
+  <h1>Bem-vindo ao <span>AxolotlBR</span></h1>
+  <p>
+    Um ecossistema criativo focado em tecnologia, jogos, RPG,
+    comunidade e experimentação.
+  </p>
+
+  <div class="hero-actions">
     <a href="https://discord.gg/AxolotlBR" target="_blank" class="btn btn-primary">
       <i class="fab fa-discord"></i> Entrar no Discord
+    </a>
+    <a href="https://github.com/Axolotl-BR" target="_blank" class="btn btn-outline">
+      <i class="fab fa-github"></i> GitHub
     </a>
   </div>
 </section>
 
-<section class="section">
-  <h2 class="section-title">E3 do Axolotl</h2>
-  <p class="section-desc">
-    Clique em qualquer área para ver mais detalhes sobre cada projeto.
-  </p>
-
-  <div class="grid">
-    <div class="balloon" onclick="openModal('smp')"><h3>Axolotl SMP</h3><p>Lore, eventos e relíquias.</p></div>
-    <div class="balloon" onclick="openModal('talks')"><h3>Axolotl Talks</h3><p>Quadros e episódios.</p></div>
-    <div class="balloon" onclick="openModal('labs')"><h3>Axolotl Labs</h3><p>Automações e sistemas.</p></div>
-    <div class="balloon" onclick="openModal('bot')"><h3>Axolotl BOT</h3><p>Bot Discord em Python.</p></div>
-    <div class="balloon" onclick="openModal('visual')"><h3>Identidade Visual</h3><p>Marca e design.</p></div>
-    <div class="balloon" onclick="openModal('site')"><h3>Axolotl Site</h3><p>Hub e portfólio.</p></div>
-    <div class="balloon" onclick="openModal('games')"><h3>Jogos do Axolotl</h3><p>Experimentos 2D.</p></div>
-    <div class="balloon" onclick="openModal('studio')"><h3>Axolotl Studio</h3><p>Mídia e templates.</p></div>
-    <div class="balloon" onclick="openModal('extras')"><h3>Extras</h3><p>RPG, IA, premium e torneios.</p></div>
-  </div>
-</section>
-
-<section class="section">
-  <h2 class="section-title">Equipe</h2>
-  <div class="grid">
-    <div class="balloon team-card"><h3>Leo</h3><p>Dev principal</p></div>
-    <div class="balloon team-card"><h3>Fabiano</h3><p>Dono / Fundador</p></div>
-    <div class="balloon team-card"><h3>noob_dev2323</h3><p>Assets & Visual</p></div>
-  </div>
-</section>
-
-<section class="section">
-  <h2 class="section-title">Timeline</h2>
-  <p class="section-desc">História do AxolotlBR desde o início.</p>
-
-  <div class="timeline">
-    <div class="timeline-item">
-      <h4>2020</h4>
-      <p>Criação do Axolotl como comunidade experimental e base criativa.</p>
-    </div>
-    <div class="timeline-item">
-      <h4>2021 – 2022</h4>
-      <p>Eventos internos, testes de servidores e definição de identidade.</p>
-    </div>
-    <div class="timeline-item">
-      <h4>2023 – 2024</h4>
-      <p>Planejamento da E3 do Axolotl e estruturação dos projetos.</p>
-    </div>
-    <div class="timeline-item">
-      <h4>2025</h4>
-      <p>Desenvolvimento ativo do SMP, BOT, Labs, site e jogos.</p>
-    </div>
-    <div class="timeline-item">
-      <h4>2026 <span style="color:var(--primary)">• Em andamento</span></h4>
-      <p>Expansão contínua, novos sistemas, jogos e crescimento da comunidade.</p>
-    </div>
-  </div>
-</section>
-
-<div class="modal" id="modal">
-  <div class="modal-content">
-    <h3 id="modal-title"></h3>
-    <p id="modal-text"></p>
-    <span class="close" onclick="closeModal()">Fechar</span>
-  </div>
-</div>
-
 <footer>
-  🔌 Powered by Cool Axolotl CLUB © 2020 - 2026 by Fabi<br>
-  Todos os direitos reservados
+  <p>
+    🔌 Powered by Cool Axolotl CLUB © 2020 - 2026 by Fabi<br>
+    Todos os direitos reservados
+  </p>
 </footer>
 
-<script>
-const data={
-  smp:{title:"Axolotl SMP",text:"Servidor survival com lore contínua, eventos canônicos e relíquias únicas."},
-  talks:{title:"Axolotl Talks",text:"Conteúdos em formato de quadros e episódios criativos."},
-  labs:{title:"Axolotl Labs",text:"Área técnica para automações, bots, sites e sistemas experimentais."},
-  bot:{title:"Axolotl BOT",text:"Bot Discord em Python com moderação, economia e integração."},
-  visual:{title:"Identidade Visual",text:"Criação da marca Axolotl: cores, banners, fontes e estilo."},
-  site:{title:"Axolotl Site",text:"Hub central de projetos, portfólio e Labs."},
-  games:{title:"Jogos do Axolotl",text:"Jogos 2D experimentais feitos em GameMaker e outras engines."},
-  studio:{title:"Axolotl Studio",text:"Templates, vídeos e conteúdo para redes sociais."},
-  extras:{title:"Extras",text:"Premium, camisetas, RPG de mesa, IA do Axolotl e torneios."}
-};
-
-function openModal(id){
-  modal.classList.add("show");
-  document.getElementById("modal-title").innerText=data[id].title;
-  document.getElementById("modal-text").innerText=data[id].text;
-}
-function closeModal(){
-  modal.classList.remove("show");
-}
-</script>
-
+<script src="/assets/js/main.js"></script>
 </body>
 </html>
+
