@@ -1,5 +1,5 @@
 /* =====================
-   SCROLL REVEAL
+   SCROLL REVEAL GLOBAL
 ===================== */
 const reveals = document.querySelectorAll('.reveal');
 
@@ -25,6 +25,7 @@ const navbar = document.querySelector('.navbar');
 
 window.addEventListener('scroll',()=>{
   const cur = window.scrollY;
+  if(!navbar) return;
 
   if(cur > lastScroll && cur > 120){
     navbar.style.transform = 'translateY(-100%)';
@@ -35,20 +36,13 @@ window.addEventListener('scroll',()=>{
 });
 
 /* =====================
-   MODAL E3 (BALÕES)
+   MODO APRESENTAÇÃO
 ===================== */
-const modal = document.getElementById('modal');
-const modalTitle = document.getElementById('modal-title');
-const modalText = document.getElementById('modal-text');
+let presentation = false;
 
-document.querySelectorAll('[data-modal]').forEach(card=>{
-  card.addEventListener('click',()=>{
-    modalTitle.innerText = card.dataset.title;
-    modalText.innerText = card.dataset.text;
-    modal.classList.add('active');
-  });
-});
-
-modal?.addEventListener('click',()=>{
-  modal.classList.remove('active');
+document.addEventListener('keydown', e=>{
+  if(e.key.toLowerCase() === 'p'){
+    presentation = !presentation;
+    document.body.classList.toggle('presentation', presentation);
+  }
 });
