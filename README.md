@@ -1,19 +1,63 @@
-# 🌐 Axolotl BR SITE
+# 🌐 Axolotl BR Site
 
-Este é o repositório do **site oficial do Axolotl BR** – uma central de testes e experimentos para o servidor e comunidade.
+### Official website of the Axolotl BR community.
 
-## 📌 Sobre
+This repository contains the source code for the **official Axolotl BR website**, serving as a central hub for the community, experiments, integrations, and future projects.
 
-O site tem como objetivo servir como base de testes e futuras implementações para o ecossistema do **Cool Axolotl CLUB**, incluindo:
+---
 
-- Informações sobre o servidor Discord e Minecraft
-- Conexão com bots e integrações externas
-- Protótipos de funcionalidades da comunidade
+## 📌 About
 
-> ⚠️ Este site está em fase de testes. Mudanças podem acontecer com frequência.
+The **Axolotl BR Site** is part of the Axolotl BR ecosystem and is designed to bring together different aspects of the community in one place.
 
-## 🛠 Tecnologias usadas
+The website may include:
 
-- HTML / CSS / JavaScript / React
+* Information about the Discord and Minecraft servers
+* Community projects and experiments
+* Bots and external integrations
+* Experimental and upcoming features
+* Resources for the Axolotl BR community
 
+> **Note:** The website is currently under active development. Features, design, and content may change frequently.
 
+---
+
+## 🛠️ Technologies
+
+The website is built using:
+
+* **HTML**
+* **CSS**
+* **JavaScript**
+* **React**
+
+---
+
+## 🚀 Development
+
+Clone the repository:
+
+```bash
+git clone https://github.com/Axolotl-BR/Axolotl-BR.git
+cd Axolotl-BR
+```
+
+Install the dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+---
+
+## 🌐 Axolotl BR
+
+The website is part of the **Axolotl BR** community and its ecosystem of projects, experiments, and services.
+
+**Axolotl BR — Building something bigger.**
