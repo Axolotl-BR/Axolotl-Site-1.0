@@ -1,0 +1,67 @@
+:root {
+  color-scheme: dark;
+
+  /* cores */
+  --bg: #050507;
+  --bg-2: #0a0713;
+  --bg-3: #110b20;
+  --surface: rgba(255, 255, 255, 0.045);
+  --surface-hover: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.2);
+  --text: #f4f1fb;
+  --text-muted: #a8a0c2;
+  --text-faint: #7c7398;
+  --primary: #8b3bff;
+  --primary-hover: #a45dff;
+  --accent: #ff41d0;
+  --success: #54e08b;
+  --warning: #ffb43e;
+  --danger: #ff5d7a;
+
+  /* neons sutis */
+  --glow-primary: rgba(139, 59, 255, 0.35);
+  --glow-accent: rgba(255, 65, 208, 0.22);
+
+  /* tipografia */
+  --font-display: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Mono', monospace;
+
+  /* radius */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 999px;
+
+  /* layout */
+  --container: 1160px;
+  --gutter: clamp(20px, 5vw, 48px);
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 72px;
+  --space-9: 120px;
+
+  /* motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-io: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 160ms;
+  --dur: 320ms;
+  --dur-slow: 640ms;
+
+  /* cursor glow (setado em JS) */
+  --mx: 50vw;
+  --my: 30vh;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 1ms;
+    --dur: 1ms;
+    --dur-slow: 1ms;
+  }
+}
